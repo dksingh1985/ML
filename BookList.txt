@@ -1,0 +1,26 @@
+Introductory
+1. Introduction to Machine Learning with Python
+
+Intermediate Level
+1. Hands-On Machine Learning with Scikit-Learn and TensorFlow
+2. Deep Learning with Python
+3. Deep Learning and the Game of Go
+
+Expert Level
+1. Deep Learning (Adaptive Computation and Machine Learning series) by Ian Goodfellow, Yoshua Bengio, Aaron Courville, Francis Bach
+2. Machine Learning: a Probabilistic Perspective
+3. Deep Learning for Natural Language Processing: Applications of Deep Neural Networks to Machine Learning Tasks by Pearson Learn IT
+Deep Learning with Python by Francois Chollet
+Advanced Deep Learning with Keras by Rowel Atienza
+Hands-On Deep Learning Algorithms with Python by Sudharsan Ravichandran
+Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow by Aurélien Géron
+Machine Intelligence: Demystifying Machine Learning, Neural Networks and Deep Learning by Suresh Samudrala
+Neural Networks and Deep Learning: A Textbook by Charu C. Aggarwal
+Neural Networks for Pattern Recognition by Christopher M. Bishop
+Neural Smithing: Supervised Learning in Feedforward Artificial Neural Networks by Russell Reed, Robert J MarksII
+Practical Convolutional Neural Networks by Mohit Sewak, Md. Rezaul Karim, Pradeep Pujari
+
+
+Other 
+
+1. Data Science Job: How to become a Data Scientist
