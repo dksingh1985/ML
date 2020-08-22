@@ -1,0 +1,3 @@
+# get no of records
+
+df.shape

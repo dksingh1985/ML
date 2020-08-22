@@ -1,0 +1,10 @@
+https://www.kdnuggets.com/2017/08/37-reasons-neural-network-not-working.html
+
+
+https://datascience.stackexchange.com/questions/19124/how-to-know-the-model-has-started-overfitting
+
+
+https://www.researchgate.net/post/why_the_prediction_or_the_output_of_neural_network_does_not_change_during_the_test_phase
+
+
+http://ronny.rest/blog/post_2017_09_11_tf_metrics/
