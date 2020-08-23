@@ -1,6 +1,7 @@
 import tensorflow as tf
 from tensorflow.keras import Model,Input
 from tensorflow.keras.layers import Dense,Conv2D,ConvLSTM2D,MaxPooling2D,TimeDistributed,Flatten
+from tensorflow.keras.optimizers import Adam
 import numpy as np
 
 DROPOUT = 0.3
@@ -31,16 +32,16 @@ def get_model(image_size):
     convL = TimeDistributed(MaxPooling2D(pool_size=(2, 2)))(convL)
     
     #64
-    #encoder_convL_7=TimeDistributed(Conv2D(H_UNIT*8, 3, activation = 'sigmoid', padding = 'same'))
-    #convL = encoder_convL_7(convL)
-    #encoder_convL_8=TimeDistributed(Conv2D(H_UNIT*8, 3, activation = 'sigmoid', padding = 'same'))
-    #convL = encoder_convL_8(convL)
-    #convL = TimeDistributed(MaxPooling2D(pool_size=(2, 2)))(convL)
+    encoder_convL_7=TimeDistributed(Conv2D(H_UNIT*8, 3, activation = 'sigmoid', padding = 'same'))
+    convL = encoder_convL_7(convL)
+    encoder_convL_8=TimeDistributed(Conv2D(H_UNIT*8, 3, activation = 'sigmoid', padding = 'same'))
+    convL = encoder_convL_8(convL)
+    convL = TimeDistributed(MaxPooling2D(pool_size=(2, 2)))(convL)
     
     #32
-    encoder_convL_9=ConvLSTM2D(H_UNIT*8, 3, activation = 'sigmoid', padding = 'same', return_sequences=True)
+    encoder_convL_9=ConvLSTM2D(H_UNIT*16, 3, activation = 'sigmoid', padding = 'same', return_sequences=True)
     convL = encoder_convL_9(convL)
-    encoder_convL_10=ConvLSTM2D(H_UNIT*8, 3, activation = 'sigmoid', padding = 'same', return_sequences=True)
+    encoder_convL_10=ConvLSTM2D(H_UNIT*16, 3, activation = 'sigmoid', padding = 'same', return_sequences=True)
     convL = encoder_convL_10(convL)
     convL = TimeDistributed(MaxPooling2D(pool_size=(2, 2)))(convL)
     
@@ -61,15 +62,17 @@ def get_model(image_size):
     
     model = Model(inputs=encoder_inputs, outputs=outL)
     
-    #model.compile(optimizer = Adam(lr = 1e-6, beta_1 = 0.9, beta_2 = 0.999, epsilon = 1e-8), loss = 'binary_crossentropy', metrics = ['accuracy'])
+    model.compile(optimizer = Adam(lr = 1e-6, beta_1 = 0.9, beta_2 = 0.999, epsilon = 1e-8), loss = 'mse', metrics = ['accuracy'])
     
     model.summary()
 
     return model
 
 m = get_model(256)
-m.save('D:\\Data\\OSIC\\model.hd5')
+m.save_weights('D:\\Data\\OSIC\\model.hd5')
 
-#m.predict(np.ones((1,1024,512,512,1)))
+print('#############')
+yhat = m.predict(np.ones((10,1024,256,256,1)))
+print(yhat)
     
 
