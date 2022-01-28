@@ -1,0 +1,65 @@
+#Import library
+from PIL import Image
+
+#Create
+img = Image.new(‘RBG’, (600,400), ‘yellow’)
+
+#Open
+img = Image.open(‘existing.png’)
+
+#Save
+img.save(‘myimage.png’)
+img.save('dksingh.jpg')
+imp.save('tatras.png', 'png')  
+
+#Show
+img.show()
+
+#Resize
+img.resize((100,100), Image.ANTIALIAS)
+
+#Blur (from PIL import ImageFilter)
+img.filter.(ImageFilter.BLUR)
+
+#Blend 2 images together
+img = Image.blend(Image.open(‘image1.png’,’image2.png’, 0.5))
+
+#Pasting an image on another
+img.paste((0,0),’image2.png’)
+
+
+#Write text on an image (ImageDraw)
+draw = ImageDraw.Draw(img)
+draw.text(0,0,’This text goes on top of the image’)
+
+Image.open(path) -> Image
+np.array(img) -> np.array
+Image.fromarray(arr) -> Image
+
+#Convert to GrayScale Image
+img.convert('L')
+
+#Convert to RGB Image
+img.convert('RGB')
+
+#Cropping or coping Image
+image.crop((100,100,200,200))
+
+#past
+region = region.transpose(Image.ROTATE_180)
+im.paste(region, box)
+
+#Rotating image
+img.rotate(180)
+
+#Simple Geometry transforms
+out = im.resize((128, 128))
+out = im.rotate(45) # degrees counter-clockwise
+
+#Transposing an image
+out = im.transpose(Image.FLIP_LEFT_RIGHT)
+out = im.transpose(Image.FLIP_TOP_BOTTOM)
+out = im.transpose(Image.ROTATE_90)
+out = im.transpose(Image.ROTATE_180)
+out = im.transpose(Image.ROTATE_270)
+
