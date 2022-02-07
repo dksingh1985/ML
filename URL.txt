@@ -1,1 +1,3 @@
 https://stackabuse.com/solving-sequence-problems-with-lstm-in-keras/
+
+https://github.com/HeroKillerEver
